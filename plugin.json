@@ -1,0 +1,141 @@
+{
+  "Id": "f4940655-b86d-4551-a07b-6da8b8ecdde9",
+  "Name": "Memos",
+  "Description": "i18n:plugin_description",
+  "Author": "taurus510",
+  "Website": "https://github.com/taurus510/wox-memos",
+  "Version": "1.0.0",
+  "MinWoxVersion": "2.0.0",
+  "Runtime": "NODEJS",
+  "Entry": "index.js",
+  "Icon": "emoji:📝",
+  "TriggerKeywords": ["memos", "memo"],
+  "SupportedOS": ["Windows", "Darwin", "Linux"],
+  "Commands": [
+    { "Command": "create", "Description": "i18n:command_create_desc" },
+    { "Command": "check", "Description": "i18n:command_check_desc" }
+  ],
+  "Features": [
+    { "Name": "ignoreAutoScore", "Params": {} },
+    { "Name": "debounce", "Params": { "IntervalMs": 250 } }
+  ],
+  "SettingDefinitions": [
+    {
+      "Type": "textbox",
+      "Value": {
+        "Key": "host",
+        "Label": "i18n:setting_host_label",
+        "Tooltip": "i18n:setting_host_tooltip",
+        "DefaultValue": "http://192.168.0.14:5230",
+        "Suffix": "",
+        "MaxLines": 1,
+        "Validators": [{ "Type": "not_empty", "Value": {} }],
+        "Style": { "Width": 400 }
+      },
+      "DisabledInPlatforms": [],
+      "IsPlatformSpecific": false
+    },
+    {
+      "Type": "textbox",
+      "Value": {
+        "Key": "token",
+        "Label": "i18n:setting_token_label",
+        "Tooltip": "i18n:setting_token_tooltip",
+        "DefaultValue": "",
+        "Suffix": "",
+        "MaxLines": 1,
+        "Validators": [{ "Type": "not_empty", "Value": {} }],
+        "Style": { "Width": 400 }
+      },
+      "DisabledInPlatforms": [],
+      "IsPlatformSpecific": false
+    },
+    {
+      "Type": "textbox",
+      "Value": {
+        "Key": "timeoutMs",
+        "Label": "i18n:setting_timeout_label",
+        "Tooltip": "i18n:setting_timeout_tooltip",
+        "DefaultValue": "10000",
+        "Suffix": "ms",
+        "MaxLines": 1,
+        "Validators": [],
+        "Style": { "Width": 200 }
+      },
+      "DisabledInPlatforms": [],
+      "IsPlatformSpecific": false
+    }
+  ],
+  "I18n": {
+    "en_US": {
+      "plugin_description": "Create, search, edit and delete memos on a self-hosted Memos 26.10+ server",
+      "command_create_desc": "Create a new memo",
+      "command_check_desc": "Check server version and token",
+      "setting_host_label": "Memos server URL",
+      "setting_host_tooltip": "Root URL only, e.g. http://192.168.0.14:5230 (no /api suffix)",
+      "setting_token_label": "Access token",
+      "setting_token_tooltip": "Personal access token from Memos → Settings → Access Tokens (memos_pat_...)",
+      "setting_timeout_label": "Request timeout",
+      "setting_timeout_tooltip": "HTTP timeout in milliseconds (default 10000)",
+      "state_unconfigured": "Memos is not configured",
+      "state_unconfigured_help": "Set the server URL and access token in Wox plugin settings",
+      "state_no_memos": "No memos yet",
+      "state_no_memos_help": "Type some text to create your first memo",
+      "state_failed": "Memos request failed",
+      "state_create_hint": "Type the memo content after 'create'",
+      "state_create_help": "Example: memos create buy milk #life",
+      "check_ok": "Connection OK",
+      "check_failed": "Connection failed",
+      "create_subtitle": "Press Enter to create this memo",
+      "action_create": "Create",
+      "action_open": "Open in browser",
+      "action_copy": "Copy",
+      "action_edit": "Edit",
+      "action_delete": "Delete",
+      "edit_content_label": "Content",
+      "edit_content_tooltip": "Edit the memo content",
+      "property_tags": "Tags",
+      "property_created": "Created",
+      "property_attachments": "Attachments",
+      "property_visibility": "Visibility",
+      "notify_created": "Memo created",
+      "notify_updated": "Memo updated",
+      "notify_deleted": "Memo deleted"
+    },
+    "zh_CN": {
+      "plugin_description": "在自建 Memos 26.10+ 服务上创建、搜索、编辑、删除备忘录",
+      "command_create_desc": "新建一条备忘录",
+      "command_check_desc": "检查服务器版本与令牌",
+      "setting_host_label": "Memos 服务器地址",
+      "setting_host_tooltip": "只填根地址，如 http://192.168.0.14:5230，不要带 /api",
+      "setting_token_label": "访问令牌 (Access Token)",
+      "setting_token_tooltip": "在 Memos → 设置 → 访问令牌 中创建，形如 memos_pat_...",
+      "setting_timeout_label": "请求超时",
+      "setting_timeout_tooltip": "HTTP 超时毫秒数，默认 10000",
+      "state_unconfigured": "Memos 未配置",
+      "state_unconfigured_help": "请在 Wox 插件设置中填写服务器地址和访问令牌",
+      "state_no_memos": "还没有备忘录",
+      "state_no_memos_help": "直接输入内容即可创建第一条",
+      "state_failed": "Memos 请求失败",
+      "state_create_hint": "在 create 后面输入备忘录内容",
+      "state_create_help": "示例：memos create 买牛奶 #生活",
+      "check_ok": "连接正常",
+      "check_failed": "连接失败",
+      "create_subtitle": "按 Enter 创建这条备忘录",
+      "action_create": "创建",
+      "action_open": "在浏览器中打开",
+      "action_copy": "复制",
+      "action_edit": "编辑",
+      "action_delete": "删除",
+      "edit_content_label": "内容",
+      "edit_content_tooltip": "编辑备忘录内容",
+      "property_tags": "标签",
+      "property_created": "创建时间",
+      "property_attachments": "附件",
+      "property_visibility": "可见性",
+      "notify_created": "已创建备忘录",
+      "notify_updated": "已更新备忘录",
+      "notify_deleted": "已删除备忘录"
+    }
+  }
+}

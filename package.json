@@ -1,0 +1,29 @@
+{
+  "name": "wox-memos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wox 2 launcher plugin for Memos 26.x (self-hosted, /api REST)",
+  "type": "commonjs",
+  "scripts": {
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/build.mjs",
+    "package": "npm run build && node scripts/pack.mjs",
+    "verify:live": "tsx scripts/verify-live.ts",
+    "check": "npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "@wox-launcher/wox-plugin": "^0.0.152",
+    "axios": "^1.13.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.28.0",
+    "fflate": "^0.8.2",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
